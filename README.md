@@ -1,27 +1,90 @@
-# Traffic-Light-System
-This project simulates a traffic light system for two roads using an Arduino Nano, LEDs, and a 7-segment display. The system controls the flow of traffic by alternating between red and green lights based on road congestion, which is detected through push buttons. The 7-segment display shows a countdown timer during transitions, enhancing the realism of the traffic light system.
+# 🚦 Arduino Traffic Light System
 
-Components :
+## 🔍 Project Overview
+This project simulates a **realistic traffic light system** for two intersecting roads using an **Arduino Nano**, **LEDs**, **push buttons**, and a **7-segment display**. It responds dynamically to road congestion, with a countdown during signal transitions for better user feedback.
 
-Arduino Nano : Microcontroller responsible for controlling the traffic light logic and timing.
-Breadboard: Platform for assembling the electronic circuit without the need for soldering.
-LEDs: Four LEDs represent the traffic lights: red and yellow for Road 1, yellow and green for Road 2.
-Resistors: Used to limit current flowing through the LEDs, preventing damage.
-Jumper wires: Connect the components on the breadboard to the Arduino board.
-Push buttons: Used to simulate congestion on each road, allowing manual control of traffic light changes.
-A 7-segment display: Displays a countdown timer during transitions between red, yellow, and green lights.
-Circuit Design :
+---
 
-The LEDs and buttons are connected to the Arduino's analog pins. Resistors are placed in series with the LEDs to limit the current. Each road has its own buttons to simulate traffic congestion.
+## ⚙️ How the System Works
 
-Road 1: Connected to red and yellow LEDs. Road 2: Connected to yellow and green LEDs. Buttons: Each road has a push button that indicates whether the road is busy or not. The 7-segment display is used to show a countdown during light transitions, improving the user experience by visually indicating the remaining time for each signal.
+The system uses **push buttons** to simulate road congestion. Based on the button pressed (representing traffic on that road), the system:
+- Switches traffic flow by alternating the red and green lights between Road 1 and Road 2.
+- Displays a countdown timer on a **7-segment display** during each transition.
+- Uses **yellow LEDs** to signal upcoming changes, mimicking real traffic light behavior.
 
-Traffic Light Logic :
+---
 
-The traffic light system follows this simplified control logic:
+## 🧠 Traffic Light Logic
 
-Button Press Detection: When the button for Road 1 is pressed, traffic lights for Road 1 turn red, and Road 2 gets the green light, allowing traffic to pass. When the button for Road 2 is pressed, the reverse happens, and Road 1 gets the green light. Transition Time: A countdown timer is displayed during transitions (red-to-green or green-to-yellow), signaling the change in light. Countdown: The 7-segment display shows the time remaining for each transition. This gives an indication of when the light will change. Main Logic Flow: If Road 1 is busy (button pressed), the red light for Road 1 is activated, and the green light for Road 2 is turned on. If Road 2 is busy, the green light for Road 1 turns on, while the red light for Road 2 is activated. The yellow light is shown as a warning before switching between green and red lights on both roads.
+1. **Button Press Detection**
+   - If **Road 1** is busy → Road 2 gets green, Road 1 goes red.
+   - If **Road 2** is busy → Road 1 gets green, Road 2 goes red.
 
-Conclusion :
+2. **Countdown Transition**
+   - A timer is shown on the 7-segment display during each light change.
 
-This traffic light system is a simplified model that mimics the real-world traffic control mechanism. The system successfully manages traffic on two roads based on button input, allowing users to simulate congestion and observe the traffic light cycle. The use of an Arduino and simple electronic components such as LEDs, resistors, and a 7-segment display makes this project an excellent introduction to traffic light control systems.
+3. **Signal Flow**
+   - Green → Yellow → Red → Switch roads.
+
+---
+
+## 🧰 Components Used
+
+| Component             | Quantity | Purpose                                  |
+|----------------------|----------|------------------------------------------|
+| Arduino Nano         | 1        | Controls the logic and signal switching  |
+| 7-Segment Display    | 1        | Shows countdown during transitions       |
+| LEDs (Red, Yellow, Green) | 6    | Simulate traffic lights on both roads    |
+| Push Buttons         | 2        | Simulate road congestion                 |
+| Resistors (220Ω–330Ω)| 6+       | Current limiting for LEDs & buttons      |
+| Breadboard           | 1        | Circuit assembly without soldering       |
+| Jumper Wires         | —        | Connections between components           |
+
+---
+
+## 🔌 Circuit Design
+- **LEDs** and **buttons** are connected to digital pins on the Arduino.
+- **Resistors** are used in series with LEDs to prevent damage.
+- The **7-segment display** is connected through digital pins with multiplexing or direct drive.
+
+---
+
+## 🧪 Learning Outcomes
+✅ Control multiple outputs (LEDs) with Arduino  
+✅ Read and debounce button inputs  
+✅ Interface and drive a 7-segment display  
+✅ Design logical signal transitions based on real-world traffic systems
+
+---
+
+## 🛠️ Tools & Software
+- **Arduino IDE** – For writing and uploading the sketch  
+- **Breadboard** – For prototyping and testing the circuit  
+- **Proteus / Tinkercad** *(optional)* – For simulation and visualization
+
+---
+
+## 🚀 Getting Started
+
+1. Assemble the components as per your schematic.
+2. Upload the Arduino sketch via Arduino IDE.
+3. Press a button to simulate congestion.
+4. Watch the lights and 7-segment display respond!
+
+---
+
+## 📸 Preview  
+<img width="1416" height="792" alt="Simulation" src="https://github.com/user-attachments/assets/b13fc0c6-5e42-4ec0-a9df-3d4ecb6a07c9" />
+
+
+---
+
+## 📚 Educational Value
+
+This project is a **great introduction** to embedded systems and digital control using Arduino. It mimics real-life traffic logic and teaches core concepts like:
+
+- Input handling  
+- Output sequencing  
+- Countdown timers  
+- User interaction  
+- Real-time logic control  
